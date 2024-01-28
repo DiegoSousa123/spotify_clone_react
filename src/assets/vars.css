@@ -1,0 +1,29 @@
+:root{
+	/* COLORS */
+	--bg-body: #030637;
+	--bg-nav: #3C0753;
+	--bg-topbar: #030637;
+	--bg-main: linear-gradient(to bottom, var(--bg-body) , var(--bg-nav));
+	--nav-lnk: #E6E6E6;
+	--nav-lnk-hov: #e10da9;
+	--accent: #910A67;
+	--search40A2D8-placeh: #f8f8ff9f;
+	--bibl-card-txt: #E6E6E6;
+	--bibl-card: #27272860;
+	--artist-card: #18181860;
+	--foot-gradient-c1: #910A67;
+	--foot-gradient-c2: #e10da9;
+	--foot-gradient-c3: #3C0753;
+	--button-bg: var(--nav-lnk);
+	--border: 2px solid var(--accent);
+	/* DIMENSIONS */
+	--bdr-rd: 10px;
+	--sidebar-wd: 300px;
+	--sidebar-ft-sz: 18px;
+	--sidebar-icons: 20px;
+	--main-wd: calc(100vw - (var(--sidebar-wd) + 1.1rem));
+	--foot-ht: 4rem;
+	--foot-bottom: 10px;
+	--content-ht: calc(100vh - var(--foot-ht) - (1.1rem + var(--foot-bottom)));
+	--mb-content: calc(100vh - var(--foot-ht));
+}

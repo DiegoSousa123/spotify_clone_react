@@ -1,0 +1,9 @@
+.main__content{
+	margin: 8px 0;
+	background-image: var(--bg-main);
+	height: var(--content-ht);
+	width: var(--main-wd);
+	float: right;
+	border-radius: var(--bdr-rd);
+	overflow-y: clip;
+}

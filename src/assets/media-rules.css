@@ -1,0 +1,160 @@
+@keyframes navOpen {
+	from {
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+@keyframes navClose {
+	from {
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	}
+	to {
+		transform: translateX(-100%);
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+@media (max-width: 620px) {
+	.arrow-button.left-arrow {
+		display: none;
+	}
+	.right-arrow{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1 / 1;
+		width: 36px;
+		margin-right: 0;
+	}
+	.right-arrow::before{
+		width: 100%;
+		height: 100%;
+		background-color: var(--bg-nav);
+	}
+	.navbar {
+		visibility: hidden;
+		overflow: scroll;
+		background-color: var(--bg-body);
+		transform: translateX(-100%);
+		height: 100vh;
+		width: 80vw;
+		z-index: 2;
+		transition:
+			visibility 300ms,
+			transform 300ms;
+	}
+	.navbar-hide{
+		visibility: hidden;
+		transform: translateX(-100%);
+		transition: visibility 250ms transform 300ms;
+	}
+	.navbar-open {
+		visibility: visible;
+		transform: translateX(0);
+		transition: transform 250ms;
+	}
+	.navbar__navigation {
+		position: relative;
+	}
+	
+	.mobile-login{
+		display: block;
+	}
+	.mobile-login-item a .ri{
+		margin-right: 15px;
+		font-size: var(--sidebar-icons);
+		font-weight: 300;
+	}
+	.arrow-button.mobile-left-arrow {
+		display: unset;
+		position: absolute;
+		right: 0;  
+		top: .6rem;
+		width: 40px;
+		aspect-ratio: 1;
+	}
+	.arrow-button.mobile-left-arrow::before{
+		border-radius: 50% 0 0 50%;
+	}
+	.main__content {
+		width: 100%;
+		margin: 5px 0;
+		height: var(--mb-content);
+		border: none;
+		border-radius: none;
+	}
+	.main__topbar{
+		height: 4rem;
+	}
+	.topbar__left{
+		width: 100%;
+		height: 90%;
+		gap: .5rem;
+	}
+	.topbar__left .search {
+		display: flex;
+		width: 100%;
+		padding: 0 1rem;
+	}
+	.search input{
+		
+	}
+	.main__topbar .main__login {
+		display: none;
+	}
+	.content__music__heading {
+		line-height: 1.5;
+		height: 5rem;
+	}
+	.content__music__grid {
+		height: calc(100% - 8rem);
+	}
+	.music__grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.card__title{
+		font-size: 1.1rem;
+	}
+	.titles {
+		font-size: 1.4rem;
+	}
+	.subtitles {
+		font-size: 1.2rem;
+	}
+	.artist__container{
+		grid-template-columns: 200px;
+	}
+	.artist__card{
+		margin: 1rem;
+	}
+	.artist__image{
+		width: 6rem;
+	}
+	.artist__name{
+		font-size: 1.1rem;
+	}
+	.artist__genre{
+		font-size: .8rem;
+	}
+	.footer__content {
+		position: static;
+		height: var(--foot-ht);
+	}
+	.footer__content .footer__text {
+		line-height: 1.1;
+		font-size: 0.7rem;
+		max-width: 70%;
+	}
+	.footer__content .button--inscrever {
+		padding: 5px 0;
+		width: 180px;
+		border-radius: unset;
+	}
+}

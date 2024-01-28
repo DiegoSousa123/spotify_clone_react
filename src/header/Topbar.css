@@ -1,0 +1,94 @@
+.main__topbar{
+	background-color: var(--bg-topbar);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 5rem;
+	padding: 0 25px 0 25px;
+}
+.main__topbar .topbar__left{
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+/* ARROW BUTTONS CONTAINER */
+.topbar__left div:first-child{
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.arrow-button{
+	font-size: 1.7rem;
+	width: 2rem;
+	aspect-ratio: 1/1;
+	text-align: center;
+	color: white;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  display: none;
+}
+.arrow-button::before{
+	position: absolute;
+	inset: 0;
+	content:"";
+	background-color: var(--bg-body);
+	border-radius: 100%;
+	z-index: -1;
+}
+.arrow-button.mobile-left-arrow{
+	display: none;
+}
+/* SEARCH INPUT CONTAINER */
+.topbar__left .search{
+	width: 320px;
+	height: 60%;
+	border: 2px solid transparent;
+	border-radius: 100px;
+	padding: 16px 5px 16px 1.2rem;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	background-color: var(--bg-nav);
+}
+.search:hover, .search:focus{
+	border-color: var(--nav-lnk-hov);
+}
+
+.topbar__left .search input{
+	background-color: transparent;
+	outline-color: var(--bg-nav);
+	outline: none;
+	border: none;
+	letter-spacing: .1rem;
+	color: var(--nav-lnk);
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: .3rem;
+}
+.search input::placeholder{
+	color: var(--search-placeh);
+}
+
+/* login/subscribe container */
+.main__topbar .main__login{
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.main__login .button__subscribe,
+.main__login .button__login{
+	height: 70%;
+	padding: 10px 30px;
+	background: var(--button-bg);
+}
+.main__login .button__subscribe{
+	background: transparent;
+	color: var(--nav-lnk);
+}
+.button__subscribe:hover{
+	color: var(--nav-lnk-hov);
+}
