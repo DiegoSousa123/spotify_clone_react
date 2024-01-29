@@ -71,9 +71,11 @@
 }
 
 .card--wrapper:hover .card__image{
-	z-index: 3;
 	filter: brightness(100%);
 	transition: filter 300ms;
+}
+.card--wrapper:hover .card__title{
+	opacity: 0;
 }
 
 /* CARDS MUSIC COLORS */
