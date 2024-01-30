@@ -17,12 +17,13 @@ import img12 from "../assets/playlist/12.jpeg";
 import img13 from "../assets/playlist/13.jpeg";
 import img14 from "../assets/playlist/14.jpeg";
 import img15 from "../assets/playlist/15.jpeg";
-//import urlApi from '../assets/artists.json'
 
-const ContentMusic = props => {
-	const [nameArtist, setNameArt] = useState("Not found");
-	const [imageArtist, setImageArt] = useState("Not found");
-	const [genreArtist, setGenre] = useState("Not found");
+const ContentMusic = (props) => {
+	/*props da acesso á propriedade 'result', definida na instância de ContentMusic no componente MainContent
+		acesse usando valor de 'result' usando props.result */
+	const [nameArtist, setNameArt] = useState("");
+	const [imageArtist, setImageArt] = useState("");
+	const [genreArtist, setGenre] = useState("");
 	const [hideOr, setHide] = useState(true);
 	useEffect(() => {
 		fetch(`${import.meta.env.VITE_API_URL}?name_like=${props.result.toLowerCase()}`)
@@ -31,9 +32,9 @@ const ContentMusic = props => {
 	}, [props.result]);
 
 	function getData(data) {
-		let a;
-		let b;
-		let c;
+		let a; //artist name
+		let b; //artist image
+		let c; //artist genre
 		data.forEach((item) => {
 			a = item.name;
 			b = item.urlImg;
@@ -41,16 +42,19 @@ const ContentMusic = props => {
 		});
 		if (a && b && c) { 
 			//verifica se os dados (a,b,c) possuem valores
-			setNameArt(a);
-			setImageArt(b);
-			setGenre(c);
+			setNameArt(a); //armazena o nome do artista na variavel de estado nameArtist
+			setImageArt(b); //armazena a url da imagem do artista na variável de estado imageArtist
+			setGenre(c); //armazena o genero de musica na variavel de estado genreArtist
 			setHide(false); //mostra o card do artista
 			return;
 		}else{
+			//caso onde os dados (a,b,c) não possuem valores
+			//ou seja, o artista não foi encontrado.
 			setHide(true); //esconde o card do artista
 		}
 	}
 
+	//função para verificar a hora e mostrar as boas vindas corretamente.
 	let time = new Date().getHours();
 	let greetins = "...";
 	if (time > "00" && time <= "11") {
@@ -62,11 +66,12 @@ const ContentMusic = props => {
 	}
 	return (
 		<>
+			/* se props.result === "", então section recebe a classe normal, caso props.result não esteja vazio
+			a section receberá a classe hide, sendo ocultada.*/
 			<section className={props.result === "" ? "main__content__music" : "hide"} id="main-content-music">
 				<div className="content__music__heading">
 					<h1 className="titles" id="reception-text">
-						{" "}
-						{greetins}{" "}
+						{greetins}
 					</h1>
 					<h2 className="subtitles">Navegar por todas as seções</h2>
 				</div>
@@ -165,6 +170,7 @@ const ContentMusic = props => {
 					</div>
 				</div>
 			</section>
+			/* se hideOr não for true, exibe o artist__card, caso contrário, oculta*/
 			<div className={props.result !== "" && !hideOr ? "artist__container" : "hide"} id="artist-container">
 				<div className="artist__card">
 					<div className="artist__card__top">
