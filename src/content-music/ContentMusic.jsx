@@ -66,10 +66,6 @@ const ContentMusic = (props) => {
 	}
 
 	return (
-			{/* a respeito da section main: se props.result === "", então section recebe a classe normal, caso props.result não esteja vazio
-			a section receberá a classe hide, sendo ocultada.*/}
-			
-			{/* a respeito do artist__card: se hideOr não for true, exibe o artist__card, caso contrário, oculta*/}
 		<>
 			<section className={props.result === "" ? "main__content__music" : "hide"} id="main-content-music">
 				<div className="content__music__heading">
